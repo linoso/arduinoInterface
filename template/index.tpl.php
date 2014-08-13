@@ -76,17 +76,17 @@
 
                             <?php
                             /** @type $mesurament \domain\Measurement*/
-                            foreach ($this->todaysMesure as $mesurament){ ?>
+                            foreach ($this->todaysMesure as $mesurament) { ?>
 
                                 <tr>
-                                    <td><?="sec"?></td>
-                                    <td><?=$mesurament->getTemp1()?></td>
-                                    <td><?=$mesurament->getTemp2()?></td>
-                                    <td><?=$mesurament->getTemp3()?></td>
-                                    <td><?=$mesurament->getTemp4()?></td>
-                                    <td><?=$mesurament->getVoltage()?></td>
-                                    <td><?=$mesurament->getCurrent()?></td>
-                                    <td><?=$mesurament->getPower()?></td>
+                                    <td><? echo "sec";?></td>
+                                    <td><? echo $mesurament->getTemp1();?></td>
+                                    <td><? echo $mesurament->getTemp2();?></td>
+                                    <td><? echo $mesurament->getTemp3();?></td>
+                                    <td><? echo $mesurament->getTemp4();?></td>
+                                    <td><? echo $mesurament->getVoltage();?></td>
+                                    <td><? echo $mesurament->getCurrent();?></td>
+                                    <td><? echo $mesurament->getPower();?></td>
                                 </tr>
 
                             <? } ?>
