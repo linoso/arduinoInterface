@@ -75,18 +75,21 @@
 							<tbody>
 
                             <?php
-                            /** @type $mesurament */
-                            foreach ($this->todaysMesure as $mesurament)?>
-                            <tr>
-									<td>76</td>
-									<td>497.1</td>
-									<td>518.6</td>
-									<td>325.9</td>
-									<td>257.8</td>
-									<td>90.59</td>
-									<td>46.96</td>
-									<td>4251.11</td>
-								</tr>
+                            /** @type $mesurament \domain\Measurement*/
+                            foreach ($this->todaysMesure as $mesurament){ ?>
+
+                                <tr>
+                                    <td><?="sec"?></td>
+                                    <td><?=$mesurament->getTemp1()?></td>
+                                    <td><?=$mesurament->getTemp2()?></td>
+                                    <td><?=$mesurament->getTemp3()?></td>
+                                    <td><?=$mesurament->getTemp4()?></td>
+                                    <td><?=$mesurament->getVoltage()?></td>
+                                    <td><?=$mesurament->getCurrent()?></td>
+                                    <td><?=$mesurament->getPower()?></td>
+                                </tr>
+
+                            <? } ?>
 
 							</tbody>
 						</table>
