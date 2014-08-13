@@ -30,19 +30,18 @@ class Dic {
     }
 
     /**
-     * @param $path
+     * @param $domainType
      * @param $classCache
      * @return Home
      */
-    public static function retriveClass($path, $classCache,$default)
+    public static function retriveClass($domainType, $classCache,$default)
     {
-        if (array_key_exists($path, self::$_usecase)) {
-            $usecase = $classCache;
-            return $usecase;
+        if (array_key_exists($domainType, $classCache)) {
+            $usecase = $classCache[$domainType];
         } else {
             $usecase = new $default();
-            $classCache = $usecase;
-            return $usecase;
+            $classCache[$domainType] = $usecase;
         }
+        return $usecase;
     }
 } 

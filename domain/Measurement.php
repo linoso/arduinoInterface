@@ -5,8 +5,10 @@
  * Date: 10/08/14
  * Time: 5:33 PM
  */
+namespace domain;
 
 class Measurement {
+
 
     private $temp1;
     private $temp2;
@@ -15,6 +17,18 @@ class Measurement {
     private $current;
     private $voltage;
     private $pressure;
+
+    function __construct($current, $pressure, $temp1, $temp2, $temp3, $temp4, $voltage)
+    {
+        $this->current = $current;
+        $this->pressure = $pressure;
+        $this->temp1 = $temp1;
+        $this->temp2 = $temp2;
+        $this->temp3 = $temp3;
+        $this->temp4 = $temp4;
+        $this->voltage = $voltage;
+    }
+
 
     /**
      * @param mixed $current

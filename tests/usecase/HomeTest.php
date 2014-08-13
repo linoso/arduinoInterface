@@ -7,11 +7,18 @@
  */
 namespace usecase;
 use library;
-class HomeTest extends PHPUnit_Framework_TestCase {
+use domain;
+class HomeTest extends \PHPUnit_Framework_TestCase {
 
     public function testPrepare()
     {
+        $repo  = new \repository\memory\Measurement();
+        $array = array(new domain\Measurement('1','1','1','1','1','1','1'));
+        $repo->insertCollections($array);
+        library\Dic::$_repo = array("mesurament" => array('Measurement' => $repo));
         $sut = new Home;
+        $sut->prepare();
+
 
     }
 }
