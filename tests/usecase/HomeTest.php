@@ -15,9 +15,10 @@ class HomeTest extends \PHPUnit_Framework_TestCase {
         $repo  = new \repository\memory\Measurement();
         $array = array(new domain\Measurement('1','1','1','1','1','1','1'));
         $repo->insertCollections($array);
-        library\Dic::$_repo = array("mesurament" => array('Measurement' => $repo));
+        library\Dic::$_repo =  array('Measurement' => $repo);
         $sut = new Home;
         $sut->prepare();
+
 
 
     }

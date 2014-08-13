@@ -18,14 +18,14 @@ class Dic {
      */
     public static function getUseCase($path = "index")
     {
-        $classCache = self::$_usecase[$path];
+        $classCache = self::$_usecase;
         $usecase = self::retriveClass($path, $classCache,"Home");
         return $usecase;
     }
 
-    public  static function getRepository($domainType="mesurament"){
-        $classCache = self::$_repo[$domainType];
-        $usecase = self::retriveClass($domainType, $classCache, "Mesurament");
+    public  static function getRepository($domainType="Measurement"){
+        $classCache = self::$_repo;
+        $usecase = self::retriveClass($domainType, $classCache, "Measurement");
         return $usecase;
     }
 
