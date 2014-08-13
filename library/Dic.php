@@ -6,6 +6,8 @@
  * Time: 2:53 PM
  */
 namespace library;
+use usecase;
+use repository;
 
 class Dic {
 
@@ -19,7 +21,7 @@ class Dic {
     public static function getUseCase($path = "index")
     {
         $classCache = self::$_usecase;
-        $usecase = self::retriveClass($path, $classCache,"Home");
+        $usecase = self::retriveClass($path, $classCache,"usecase\Home");
         return $usecase;
     }
 
