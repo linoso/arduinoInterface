@@ -79,17 +79,17 @@
                             foreach ($this->todaysMesure as $mesurament) { ?>
 
                                 <tr>
-                                    <td><? echo "sec";?></td>
-                                    <td><? echo $mesurament->getTemp1();?></td>
-                                    <td><? echo $mesurament->getTemp2();?></td>
-                                    <td><? echo $mesurament->getTemp3();?></td>
-                                    <td><? echo $mesurament->getTemp4();?></td>
-                                    <td><? echo $mesurament->getVoltage();?></td>
-                                    <td><? echo $mesurament->getCurrent();?></td>
-                                    <td><? echo $mesurament->getPower();?></td>
+                                    <td><?php echo "sec";?></td>
+                                    <td><?php echo $mesurament->getTemp1();?></td>
+                                    <td><?php echo $mesurament->getTemp2();?></td>
+                                    <td><?php echo $mesurament->getTemp3();?></td>
+                                    <td><?php echo $mesurament->getTemp4();?></td>
+                                    <td><?php echo $mesurament->getVoltage();?></td>
+                                    <td><?php echo $mesurament->getCurrent();?></td>
+                                    <td><?php echo $mesurament->getPower();?></td>
                                 </tr>
 
-                            <? } ?>
+                            <?php } ?>
 
 							</tbody>
 						</table>
