@@ -17,8 +17,9 @@ class Measurement {
     private $current;
     private $voltage;
     private $pressure;
+    private $time;
 
-    function __construct($current, $pressure, $temp1, $temp2, $temp3, $temp4, $voltage)
+    function __construct($current, $pressure, $temp1, $temp2, $temp3, $temp4, $voltage, $time)
     {
         $this->current = $current;
         $this->pressure = $pressure;
@@ -27,6 +28,24 @@ class Measurement {
         $this->temp3 = $temp3;
         $this->temp4 = $temp4;
         $this->voltage = $voltage;
+        $this->time = $time;
+    }
+
+    /**
+     * @param mixed $time
+     */
+    public function setTime($time)
+    {
+        $this->time = $time;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTime()
+    {
+        return $this->time;
     }
 
 

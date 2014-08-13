@@ -49,13 +49,13 @@
 					<div class="span7">
 						<div class="panel">
 							<img class="default" src="images/engine.jpg">
-							<div class="dotdata info" style="top:11%;left:13%;"><div class="dotdatabadge"><label><abbr title="Watt">W<sub>E</sub></abbr></label><div>4251.11</div></div></div>
-							<div class="dotdata info" style="top:25%;left:7.5%;"><div class="dotdatabadge"><label>Volt</label><div>90.59</div></div></div>
-							<div class="dotdata info" style="top:25%;left:18.5%;"><div class="dotdatabadge"><label>Amp</label><div>46.96</div></div></div>
-							<div class="dotdata warning" style="top:65%;left:83%;"><div class="dotdatabadge"><label><abbr title="Temp 1">T<sub>w1</sub></abbr></label><div>497.1</div></div></div>
-							<div class="dotdata error" style="top:80%;left:83%;"><div class="dotdatabadge"><label><abbr title="Temp 2">T<sub>w2</sub></abbr></label><div>518.6</div></div></div>
-							<div class="dotdata success" style="top:50%;left:53%;"><div class="dotdatabadge"><label><abbr title="Temp 3">T<sub>C</sub></abbr></label><div>325.9</div></div></div>
-							<div class="dotdata error" style="top:65%;left:53%;"><div class="dotdatabadge"><label><abbr title="Temp 4">C<sub>H</sub></abbr></label><div>257.8</div></div></div>
+							<div class="dotdata info" style="top:11%;left:13%;"><div class="dotdatabadge"><label><abbr title="Watt">W<sub>E</sub></abbr></label><div><?php echo $this->lastMesure->getPower(); ?></div></div></div>
+							<div class="dotdata info" style="top:25%;left:7.5%;"><div class="dotdatabadge"><label>Volt</label><div><?php echo $this->lastMesure->getVoltage(); ?></div></div></div>
+							<div class="dotdata info" style="top:25%;left:18.5%;"><div class="dotdatabadge"><label>Amp</label><div><?php echo $this->lastMesure->getCurrent(); ?></div></div></div>
+							<div class="dotdata warning" style="top:65%;left:83%;"><div class="dotdatabadge"><label><abbr title="Temp 1">T<sub>w1</sub></abbr></label><div><?php echo $this->lastMesure->getTemp1(); ?></div></div></div>
+							<div class="dotdata error" style="top:80%;left:83%;"><div class="dotdatabadge"><label><abbr title="Temp 2">T<sub>w2</sub></abbr></label><div><?php echo $this->lastMesure->getTemp2(); ?></div></div></div>
+							<div class="dotdata success" style="top:50%;left:53%;"><div class="dotdatabadge"><label><abbr title="Temp 3">T<sub>C</sub></abbr></label><div><?php echo $this->lastMesure->getTemp3(); ?></div></div></div>
+							<div class="dotdata error" style="top:65%;left:53%;"><div class="dotdatabadge"><label><abbr title="Temp 4">C<sub>H</sub></abbr></label><div><?php echo $this->lastMesure->getTemp4(); ?></div></div></div>
 						</div><!-- /panel -->
 					</div><!-- /span -->
 					<div class="span5">
@@ -79,7 +79,7 @@
                             foreach ($this->todaysMesure as $mesurament) { ?>
 
                                 <tr>
-                                    <td><?php echo "sec";?></td>
+                                    <td><?php echo $mesurament->getTime();?></td>
                                     <td><?php echo $mesurament->getTemp1();?></td>
                                     <td><?php echo $mesurament->getTemp2();?></td>
                                     <td><?php echo $mesurament->getTemp3();?></td>

@@ -12,11 +12,13 @@ use library;
 class Home implements UseCase {
 
     public $todaysMesure = array();
+    /** @var domain\Measurement */
+    public $lastMesure = null;
 
     function __construct()
     {
         $repo  = new repository\memory\Measurement();
-        $array = array(new domain\Measurement('1','1','1','1','1','1','1'));
+        $array = HomeTest::prepareDateFake();
         $repo->insertCollections($array);
         library\Dic::$_repo =  array('Measurement' => $repo);
     }
@@ -27,6 +29,7 @@ class Home implements UseCase {
         /**@type $repo repository\Measurement **/
         $repo =  library\Dic::getRepository('Measurement');
         $this->todaysMesure = $repo->getTodaysCollection();
+        $this->lastMesure= current($this->todaysMesure);
 
     }
 
