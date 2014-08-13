@@ -13,7 +13,7 @@ class HomeTest extends \PHPUnit_Framework_TestCase {
     public function testPrepare()
     {
         $repo  = new \repository\memory\Measurement();
-        $array = $this->prepareDateFake();
+        $array = Home::prepareDateFake();
         $repo->insertCollections($array);
         library\Dic::$_repo =  array('Measurement' => $repo);
         $sut = new Home;
@@ -23,15 +23,7 @@ class HomeTest extends \PHPUnit_Framework_TestCase {
 
     }
 
-    /**
-     * @return array
-     */
-    public static function prepareDateFake()
-    {
-        $dom1 = new domain\Measurement('1', '1', '1', '1', '1', '1', '1', '1');
-        $dom2 = new domain\Measurement('2', '2', '2', '2', '2', '2', '2', '2');
-        return  array($dom1, $dom2);
-    }
+
 
 
 }

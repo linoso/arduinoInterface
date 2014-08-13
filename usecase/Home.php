@@ -18,7 +18,7 @@ class Home implements UseCase {
     function __construct()
     {
         $repo  = new repository\memory\Measurement();
-        $array = HomeTest::prepareDateFake();
+        $array = Home::prepareDateFake();
         $repo->insertCollections($array);
         library\Dic::$_repo =  array('Measurement' => $repo);
     }
@@ -38,4 +38,13 @@ class Home implements UseCase {
         include(APPLICATON_PATH.DIRECTORY_SEPARATOR.'template'.DIRECTORY_SEPARATOR.'index.tpl.php');
     }
 
+    /**
+     * @return array
+     */
+    public static function prepareDateFake()
+    {
+        $dom1 = new domain\Measurement('1', '1', '1', '1', '1', '1', '1', '1');
+        $dom2 = new domain\Measurement('2', '2', '2', '2', '2', '2', '2', '2');
+        return  array($dom1, $dom2);
+    }
 } 
