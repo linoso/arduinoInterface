@@ -8,9 +8,10 @@ spl_autoload_register(
         if ($classes === null) {
             $classes = array(
                 'bootstrap' => '/bootstrap.php',
+                'domain\\measurement' => '/domain/Measurement.php',
                 'library\\dic' => '/library/Dic.php',
-                'measurement' => '/domain/Measurement.php',
                 'repository\\measurement' => '/repository/Measurement.php',
+                'repository\\memory\\measurement' => '/repository/memory/Measurement.php',
                 'usecase\\home' => '/usecase/Home.php',
                 'usecase\\hometest' => '/tests/usecase/HomeTest.php',
                 'usecase\\usecase' => '/usecase/UseCase.php'
