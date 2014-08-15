@@ -9,9 +9,14 @@ spl_autoload_register(
             $classes = array(
                 'bootstrap' => '/bootstrap.php',
                 'domain\\measurement' => '/domain/Measurement.php',
+                'fakepdo' => '/tests/repository/PDO/MeasurementTest.php',
                 'library\\dic' => '/library/Dic.php',
+                'library\\time' => '/library/Time.php',
+                'measurementtest' => '/tests/repository/PDO/MeasurementTest.php',
                 'repository\\measurement' => '/repository/Measurement.php',
                 'repository\\memory\\measurement' => '/repository/memory/Measurement.php',
+                'repository\\pdo\\abstractrepo' => '/repository/PDO/AbstractRepo.php',
+                'repository\\pdo\\measurement' => '/repository/PDO/Measurement.php',
                 'usecase\\home' => '/usecase/Home.php',
                 'usecase\\hometest' => '/tests/usecase/HomeTest.php',
                 'usecase\\usecase' => '/usecase/UseCase.php'
