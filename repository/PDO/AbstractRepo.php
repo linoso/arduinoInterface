@@ -31,14 +31,23 @@ abstract class AbstractRepo {
         }
     }
 
+    /**
+     * @param Query $string
+     * @return array[array]
+     */
     function query($string)
     {
         $this->results = self::$dbConnection->query($string);
+        return  $this->results;
+
     }
 
+    /**
+     * @return array
+     */
     function  getRow()
     {
-        array_shift($this->results);
+       return array_shift($this->results);
     }
 
 
