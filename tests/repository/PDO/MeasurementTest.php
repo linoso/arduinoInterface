@@ -13,12 +13,24 @@ class MeasurementTest extends PHPUnit_Framework_TestCase {
     public function testReturnSuccesfullThreeRows()
     {
         date_default_timezone_set('America/Toronto');
-        \library\Time::setCurrentTime(strtotime('2014-08-21 00:00:00'));
+        \library\Time::setCurrentTime(strtotime('2014-08-16 00:00:00'));
         $pdo = new FakePdo($this);
         \repository\PDO\Measurement::$dbConnection= $pdo;
         $sut = new \repository\PDO\Measurement();
         $return = $sut->getTodaysCollection();
         $this->assertEquals($pdo->generateDate(), $return);
+    }
+
+    public function testReturnSuccesfullConnectingDB()
+    {
+        date_default_timezone_set('America/Toronto');
+        \library\Time::setCurrentTime(strtotime('2014-08-16 00:00:00'));
+        \repository\PDO\Measurement::$dbConnection= null;
+        $sut = new \repository\PDO\Measurement();
+        $return = $sut->getTodaysCollection();
+        print_r($return);
+        die();
+
     }
 }
 
@@ -34,7 +46,7 @@ class FakePdo
     }
 
     public function query($string){
-        $this->phpUnit->assertEquals('SELECT *  FROM dataset_201408 where time > \'2014-08-20 00:00:00\'',$string);
+        $this->phpUnit->assertEquals('SELECT *  FROM dataset_201408 where time > \'2014-08-15 00:00:00\'',$string);
         $return = $this->generateDate();
         return $return;
     }

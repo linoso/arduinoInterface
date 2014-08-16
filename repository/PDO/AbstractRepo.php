@@ -21,9 +21,13 @@ abstract class AbstractRepo {
 
     function __construct()
     {
+        $dsn = 'mysql:host=192.168.0.103;dbname=StirlingDatasets';
+        $username = 'stirling';
+        $password = 'genoa';
+
         if(is_null(self::$dbConnection)){
             try{
-                self::$dbConnection =  new \PDO('localhost','stirling','genoa');
+                self::$dbConnection =  new \PDO($dsn,$username,$password);
             } catch (\Exception $e){
                 print_r($e);
                 die();
