@@ -25,9 +25,9 @@ class Dic {
         return $usecase;
     }
 
-    public  static function getRepository($domainType="Measurement"){
+    public  static function getRepository($domainType="repository\PDO\Measurement"){
         $classCache = self::$_repo;
-        $usecase = self::retriveClass($domainType, $classCache, "Measurement");
+        $usecase = self::retriveClass($domainType, $classCache, "repository\PDO\Measurement");
         return $usecase;
     }
 

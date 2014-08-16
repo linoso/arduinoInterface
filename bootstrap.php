@@ -8,6 +8,9 @@ class Bootstrap
     public function run()
     {
 
+        /**
+         * @type $useCase \usecase\UseCase;
+         */
         $useCase = Dic::getUseCase();
         $useCase->prepare();
         $useCase->display();
