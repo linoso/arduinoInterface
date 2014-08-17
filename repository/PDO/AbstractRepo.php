@@ -41,7 +41,7 @@ abstract class AbstractRepo {
      */
     function query($string)
     {
-        $this->results = self::$dbConnection->query($string);
+        $this->results = self::$dbConnection->query($string)->fetchAll() ;
         return  $this->results;
 
     }
