@@ -18,18 +18,21 @@ class MeasurementTest extends PHPUnit_Framework_TestCase {
         \repository\PDO\Measurement::$dbConnection= $pdo;
         $sut = new \repository\PDO\Measurement();
         $return = $sut->getTodaysCollection();
-        $this->assertEquals($pdo->generateDate(), $return);
+        $expected = array();
+        foreach($pdo->generateDate() as $row){
+            $expected[] = new \domain\Measurement($row['ampere'],$row['bar'],$row['temp1'],$row['temp2'],$row{'temp3'},$row['temp4'],$row['volt'],$row['time']);
+        }
+        $this->assertEquals($expected, $return);
     }
 
-    public function testReturnSuccesfullConnectingDB()
+    public function _testReturnSuccesfullConnectingDB()
     {
         date_default_timezone_set('America/Toronto');
         \library\Time::setCurrentTime(strtotime('2014-08-16 00:00:00'));
         \repository\PDO\Measurement::$dbConnection= null;
         $sut = new \repository\PDO\Measurement();
         $return = $sut->getTodaysCollection();
-        print_r($return);
-        die();
+
 
     }
 }

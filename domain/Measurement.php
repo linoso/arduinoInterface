@@ -19,7 +19,7 @@ class Measurement {
     private $pressure;
     private $time;
 
-    function __construct($current, $pressure, $temp1, $temp2, $temp3, $temp4, $voltage, $time)
+    function __construct($current=null, $pressure=null, $temp1=null, $temp2=null, $temp3=null, $temp4=null, $voltage=null, $time=null)
     {
         $this->current = $current;
         $this->pressure = $pressure;

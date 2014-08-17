@@ -21,8 +21,21 @@ class Measurement extends AbstractRepo implements \repository\Measurement {
         $date = $date->getYesterday();
         $dateString = $date->getFromattedDate(self::DATE_FORMAT);
         $suffix = $date->getFromattedDate(self::TABLE_SUFFIX);
-        $result = $this->query("SELECT *  FROM dataset_$suffix where time > '$dateString'");
-        return  $result;
+        $this->query("SELECT *  FROM dataset_$suffix where time > '$dateString'");
+        $return = array();
+        while($row = $this->getRow()){
+            $measurament = new \domain\Measurement();
+            $measurament->setCurrent($row['ampere']);
+            $measurament->setVoltage($row['volt']);
+            $measurament->setPressure($row['bar']);
+            $measurament->setTime($row['time']);
+            $measurament->setTemp1($row['temp1']);
+            $measurament->setTemp2($row['temp2']);
+            $measurament->setTemp3($row['temp3']);
+            $measurament->setTemp4($row['temp4']);
+            $return[] =$measurament;
+        }
+        return  $return;
     }
 
 } 
