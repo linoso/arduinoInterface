@@ -49,6 +49,7 @@
 					<div class="span7">
 						<div class="panel">
 							<img class="default" src="images/engine.jpg">
+                            <?php if(is_object($this->lastMesure) && $this->lastMesure instanceof domain\Measurement) {?>
 							<div class="dotdata info" style="top:11%;left:13%;"><div class="dotdatabadge"><label><abbr title="Watt">W<sub>E</sub></abbr></label><div><?php echo $this->lastMesure->getPower(); ?></div></div></div>
 							<div class="dotdata info" style="top:25%;left:7.5%;"><div class="dotdatabadge"><label>Volt</label><div><?php echo $this->lastMesure->getVoltage(); ?></div></div></div>
 							<div class="dotdata info" style="top:25%;left:18.5%;"><div class="dotdatabadge"><label>Amp</label><div><?php echo $this->lastMesure->getCurrent(); ?></div></div></div>
@@ -56,6 +57,7 @@
 							<div class="dotdata error" style="top:80%;left:83%;"><div class="dotdatabadge"><label><abbr title="Temp 2">T<sub>w2</sub></abbr></label><div><?php echo $this->lastMesure->getTemp2(); ?></div></div></div>
 							<div class="dotdata success" style="top:50%;left:53%;"><div class="dotdatabadge"><label><abbr title="Temp 3">T<sub>C</sub></abbr></label><div><?php echo $this->lastMesure->getTemp3(); ?></div></div></div>
 							<div class="dotdata error" style="top:65%;left:53%;"><div class="dotdatabadge"><label><abbr title="Temp 4">C<sub>H</sub></abbr></label><div><?php echo $this->lastMesure->getTemp4(); ?></div></div></div>
+                            <?php } else { print_r($this->lastMesure);}?>
 						</div><!-- /panel -->
 					</div><!-- /span -->
 					<div class="span5">
